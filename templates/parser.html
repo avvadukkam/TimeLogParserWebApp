@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Parser</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<h2 style="display:inline">Time Log Parser</h2>
+<div id="main" class="float-right">
+  <a style="display:inline" class="btn btn-outline-success" href = '/upload'>+ Upload Log File</a>
+  <a style="display:inline" class="btn btn-outline-danger" href = '/delete'>- Remove Log File</a>
+</div>
+<hr>
+<form class="form-inline" method="POST" action="{{ url_for('file_name') }}" enctype="multipart/form-data">
+    <div class="form-group">
+      <div class="input-group">
+          <span class="input-group-addon">Please select </span>
+              <select name="comp_select" class="selectpicker form-control">
+              {% for file in files %}
+                <option value="{{file}}" SELECTED>{{file}}</option>
+                {% endfor %}
+              </select>
+      </div>
+      <button type="submit" class="btn btn-success" href = '/parser/'+file_name() >Execute</button>
+    </div>
+  </form>
+<hr>
+<div>
+  <h5>Result : </h5>
+  <object data='/read_txt'>{{content}}</object>
+</div>
+</div>
+{% endblock %}

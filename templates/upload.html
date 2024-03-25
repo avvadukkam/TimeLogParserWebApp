@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Upload</title>
+{% endblock %}
+
+{% block body %}
+<h2>File Upload</h2>
+<form method="POST" action="" enctype="multipart/form-data">
+  <div class="form-group">
+    <label>Select file</label>
+    <div class="custom-file">
+      <p><input type="file" name="file" class="custom-file-input" id="file" accept=".txt">
+      <label class="custom-file-label" for="file">Select file...</label></p>
+    </div>
+  </div>
+  <p><input type="submit" value="Upload" class="btn btn-success">
+  <a class="btn btn-primary" href='/parser'>Return</a></p>
+</form>
+<hr>
+    {% for file in files %}
+      <a href="{{ url_for('upload_txt', filename=file) }}" >{{file}}</a>
+      <br>
+    {% endfor %}
+{% endblock %}

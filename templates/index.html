@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<main role="main">
+  <div class="jumbotron">
+    <div class="col-sm-8 mx-auto">
+      <h1>Welcome</h1>
+      <p>Welcome to the Time Log Parser Webpage. Here we can upload or select any time log file and find the total time duration</p>
+      <p>Upload the Time Log as a text file with first line as Time Log: </p>
+      <p>
+        <a class="btn btn-primary" href="/parser" role="button">Go To Parser &raquo;</a>
+      </p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
