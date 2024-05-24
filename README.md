@@ -1,2 +1,2 @@
 # TimeLogParserWebApp
-This is a Flask based web application to log the time
+This is a web application to log the time using Flask framwork and python
